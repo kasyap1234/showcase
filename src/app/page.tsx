@@ -21,7 +21,7 @@ export default function Home() {
           </div>
           <h2 className="text-4xl md:text-5xl font-display font-medium mb-6 tracking-tight">Ready to build?</h2>
           <p className="text-zinc-400 mb-8 max-w-xl mx-auto">Start a conversation with our engineering team today.</p>
-          <a href="mailto:hello@nextgen.com" className="inline-flex h-11 items-center justify-center rounded-md bg-white px-8 text-sm font-medium text-black transition-colors hover:bg-zinc-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-zinc-400 disabled:pointer-events-none disabled:opacity-50">
+          <a href="mailto:hello@cloudwinitsolutions.com" className="inline-flex h-11 items-center justify-center rounded-md bg-white px-8 text-sm font-medium text-black transition-colors hover:bg-zinc-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-zinc-400 disabled:pointer-events-none disabled:opacity-50">
             Contact Us
           </a>
         </div>

@@ -13,7 +13,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Next Gen Apps - Web & Mobile Development",
+  title: "Cloud Winit Solutions - Web & Mobile Development",
   description: "Premium web applications, hybrid mobile apps, and ongoing support for scalable business systems.",
 };
 
