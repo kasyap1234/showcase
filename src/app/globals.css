@@ -1,26 +1,85 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  /* Font Family */
+  --font-display: var(--font-display, "Outfit", sans-serif);
+  --font-body: var(--font-body, "Inter", sans-serif);
+  --font-mono: var(--font-mono, "JetBrains Mono", monospace);
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* Colors - Stark Monochromatic YC/Linear style */
+  --color-bg-void: #000000;
+  --color-bg-primary: #000000; /* Pure black */
+  --color-bg-elevated: #0a0a0a;
+  --color-bg-subtle: #111111;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #a1a1aa; /* zinc-400 */
+  --color-text-muted: #71717a; /* zinc-500 */
+  
+  /* Minimalist Accents */
+  --color-accent-blue: #ffffff;
+  --color-accent-cyan: #e4e4e7;
+  --color-accent: #ffffff; 
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  /* Crisp Glassmorphism */
+  --color-glass-bg: rgba(0, 0, 0, 0.4);
+  --color-glass-border: rgba(255, 255, 255, 0.08);
+  --color-glass-hover: rgba(255, 255, 255, 0.12);
+
+  /* Animations & Keyframes */
+  --animate-fade-up: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
 
+/* Utilities */
+@utility glass {
+  background: var(--color-glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--color-glass-border);
+}
+
+@utility glass-elevated {
+  background: rgba(25, 25, 25, 0.4);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+@utility text-gradient {
+  background: linear-gradient(180deg, #ffffff 0%, #a1a1aa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Base resets & theme application */
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
 }
