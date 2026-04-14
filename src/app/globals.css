@@ -6,28 +6,28 @@
   --font-body: var(--font-body, "Inter", sans-serif);
   --font-mono: var(--font-mono, "JetBrains Mono", monospace);
 
-  /* Colors - Stark Monochromatic YC/Linear style */
+  /* Colors - Dark + Gradient Accent */
   --color-bg-void: #000000;
-  --color-bg-primary: #000000; /* Pure black */
+  --color-bg-primary: #000000;
   --color-bg-elevated: #0a0a0a;
   --color-bg-subtle: #111111;
   --color-text-primary: #ffffff;
-  --color-text-secondary: #a1a1aa; /* zinc-400 */
-  --color-text-muted: #71717a; /* zinc-500 */
-  
-  /* Minimalist Accents */
-  --color-accent-blue: #ffffff;
-  --color-accent-cyan: #e4e4e7;
-  --color-accent: #ffffff; 
+  --color-text-secondary: #a1a1aa;
+  --color-text-muted: #71717a;
 
-  /* Crisp Glassmorphism */
+  /* Gradient Accents */
+  --color-accent-blue: #3b82f6;
+  --color-accent-violet: #8b5cf6;
+  --color-accent-cyan: #06b6d4;
+
+  /* Glassmorphism */
   --color-glass-bg: rgba(0, 0, 0, 0.4);
   --color-glass-border: rgba(255, 255, 255, 0.08);
   --color-glass-hover: rgba(255, 255, 255, 0.12);
 
-  /* Animations & Keyframes */
+  /* Animations */
   --animate-fade-up: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  
+
   @keyframes fade-up {
     from {
       opacity: 0;
@@ -56,13 +56,20 @@
 }
 
 @utility text-gradient {
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@utility text-gradient-light {
   background: linear-gradient(180deg, #ffffff 0%, #a1a1aa 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Base resets & theme application */
+/* Base resets */
 :root {
   color-scheme: dark;
 }
@@ -80,6 +87,6 @@ body {
 }
 
 ::selection {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(59, 130, 246, 0.3);
   color: #fff;
 }

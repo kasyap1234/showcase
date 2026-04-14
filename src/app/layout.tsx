@@ -13,8 +13,8 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Cloud Winit Solutions - Web & Mobile Development",
-  description: "Premium web applications, hybrid mobile apps, and ongoing support for scalable business systems.",
+  title: "Cloud Winit Solutions - Web, Mobile, Cloud, AI & CRM Development",
+  description: "Your end-to-end technology partner. We build, automate, and scale digital products — custom web apps, mobile apps, cloud solutions, CRM systems, AI integrations, and ongoing support.",
 };
 
 export default function RootLayout({
