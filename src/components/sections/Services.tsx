@@ -1,111 +1,154 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  Monitor,
-  Smartphone,
-  Cloud,
-  Users,
-  Brain,
-  Zap,
-  Wrench,
-  RefreshCw,
-} from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 const services = [
   {
-    icon: Monitor,
+    n: "01",
     title: "Web Applications",
-    description: "Custom web apps, SaaS platforms, dashboards, and portals built with React, Next.js, and modern backends.",
+    body: "SaaS platforms, dashboards, portals, e-commerce. React, Next.js, and the modern stack, assembled with care.",
   },
   {
-    icon: Smartphone,
+    n: "02",
     title: "Mobile Apps",
-    description: "Cross-platform iOS & Android apps with React Native — from MVP to production with App Store deployment.",
+    body: "Cross-platform iOS and Android with React Native and Expo. From first MVP to App Store and beyond.",
   },
   {
-    icon: Cloud,
+    n: "03",
     title: "Cloud Solutions",
-    description: "Cloud-native architecture on AWS, Azure, and GCP. Migration, serverless, auto-scaling, and cost optimization.",
+    body: "AWS, Azure, GCP. Migration, serverless, auto-scaling. Infrastructure that grows quietly with your business.",
   },
   {
-    icon: Users,
-    title: "CRM Development",
-    description: "Custom CRM systems for lead management, sales pipelines, and customer tracking with third-party integrations.",
+    n: "04",
+    title: "CRM Systems",
+    body: "Custom CRMs built around how your team actually works. Pipelines, reporting, integrations — no bloat.",
   },
   {
-    icon: Brain,
+    n: "05",
     title: "AI Integrations",
-    description: "Chatbots, intelligent document processing, AI analytics, recommendation engines, and generative AI features.",
+    body: "Chatbots, document intelligence, recommendation engines, generative features. Practical AI, not hype.",
   },
   {
-    icon: Zap,
+    n: "06",
     title: "Automation",
-    description: "Business process automation, scheduled tasks, workflow orchestration, and data syncing between systems.",
+    body: "Workflow orchestration, scheduled jobs, cross-system syncing. The invisible plumbing your team will stop worrying about.",
   },
   {
-    icon: Wrench,
+    n: "07",
     title: "Support & Maintenance",
-    description: "24/7 monitoring, bug fixes, performance tuning, security patches, and SLA-backed dedicated support.",
+    body: "Monitoring, bug fixes, performance tuning, security patches. Dedicated engineers who know your system.",
   },
   {
-    icon: RefreshCw,
+    n: "08",
     title: "Modernization",
-    description: "Legacy to modern stack migration, monolith to microservices, database optimization, and UI/UX redesign.",
+    body: "Legacy to modern stack. Monolith to services. The careful, unglamorous work of making old software new.",
   },
 ];
 
 export function Services() {
   return (
-    <section className="py-24 md:py-32 relative" id="services">
-      <div className="container mx-auto px-4 sm:px-6">
-        <div className="mb-16 text-center max-w-2xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
+    <section
+      id="services"
+      className="relative px-6 sm:px-10 lg:px-16 py-32 md:py-40"
+    >
+      {/* Section header */}
+      <div className="grid grid-cols-12 gap-6 mb-20 md:mb-28">
+        <div className="col-span-12 md:col-span-4">
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-blue-500/20 bg-blue-500/5 mb-6"
+            className="label-mono"
+            style={{ color: "var(--color-cream-dim)" }}
           >
-            <span className="text-xs font-medium text-blue-400 uppercase tracking-wider">What We Do</span>
-          </motion.div>
+            02 &nbsp;—&nbsp; services
+          </motion.p>
+        </div>
+        <div className="col-span-12 md:col-span-8">
           <motion.h2
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="display-serif text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] font-light max-w-4xl"
+            style={{ color: "var(--color-cream)" }}
+          >
+            Full-spectrum{" "}
+            <span className="display-serif-italic font-light" style={{ color: "var(--color-accent)" }}>
+              software
+            </span>{" "}
+            for every stage of the journey.
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl md:text-5xl font-display font-semibold mb-6 text-white tracking-tight"
+            className="mt-8 max-w-2xl text-base leading-relaxed"
+            style={{ color: "var(--color-cream-muted)" }}
           >
-            Full-Spectrum Digital Services
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-zinc-400 text-lg leading-relaxed"
-          >
-            From building your first product to scaling enterprise systems — we cover every stage of your digital journey.
+            We work across the lifecycle — discovery and design through to deployment and the long,
+            quiet years of maintenance. A single studio. One team. Senior engineers only.
           </motion.p>
         </div>
+      </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {services.map((service, idx) => (
-            <motion.div
-              key={service.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.05 }}
-              className="group relative p-6 rounded-xl border border-white/5 bg-white/[0.02] hover:border-blue-500/20 hover:bg-blue-500/[0.03] transition-all duration-300"
-            >
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500/10 to-violet-500/10 border border-white/5 flex items-center justify-center mb-4 group-hover:from-blue-500/20 group-hover:to-violet-500/20 transition-all">
-                <service.icon size={20} className="text-blue-400 group-hover:text-blue-300 transition-colors" />
-              </div>
-              <h3 className="text-lg font-semibold mb-2 text-white">{service.title}</h3>
-              <p className="text-sm text-zinc-400 leading-relaxed">{service.description}</p>
-            </motion.div>
-          ))}
+      {/* Editorial list */}
+      <div className="grid grid-cols-12 gap-6">
+        <div className="col-span-12 md:col-span-10 md:col-start-3">
+          <ul className="hairline" style={{ borderColor: "var(--color-rule)" }}>
+            {services.map((s, idx) => (
+              <motion.li
+                key={s.n}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{
+                  duration: 0.7,
+                  delay: (idx % 4) * 0.06,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
+                className="group border-b py-8 md:py-10"
+                style={{ borderColor: "var(--color-rule)" }}
+              >
+                <div className="grid grid-cols-12 gap-6 items-baseline">
+                  <div className="col-span-2 md:col-span-1">
+                    <span
+                      className="label-mono"
+                      style={{ color: "var(--color-cream-dim)" }}
+                    >
+                      {s.n}
+                    </span>
+                  </div>
+                  <div className="col-span-10 md:col-span-5">
+                    <h3
+                      className="display-serif text-3xl md:text-4xl font-light leading-tight transition-transform duration-500 group-hover:translate-x-2"
+                      style={{ color: "var(--color-cream)" }}
+                    >
+                      {s.title}
+                    </h3>
+                  </div>
+                  <div className="col-span-12 md:col-span-5 mt-3 md:mt-0">
+                    <p
+                      className="text-[15px] leading-relaxed"
+                      style={{ color: "var(--color-cream-muted)" }}
+                    >
+                      {s.body}
+                    </p>
+                  </div>
+                  <div className="col-span-12 md:col-span-1 md:justify-self-end">
+                    <ArrowUpRight
+                      size={20}
+                      className="opacity-40 group-hover:opacity-100 group-hover:-translate-y-1 group-hover:translate-x-1 transition-all duration-500"
+                      style={{ color: "var(--color-accent)" }}
+                    />
+                  </div>
+                </div>
+              </motion.li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

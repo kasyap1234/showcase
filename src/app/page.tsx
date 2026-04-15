@@ -10,7 +10,7 @@ import { Testimonials } from "@/components/sections/Testimonials";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black text-white selection:bg-blue-500/30">
+    <main className="min-h-screen" style={{ backgroundColor: "var(--color-ink)", color: "var(--color-cream)" }}>
       <Navbar />
       <Hero />
       <Services />
