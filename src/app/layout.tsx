@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Outfit } from "next/font/google";
+import { Inter, Fraunces, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -7,14 +7,20 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const outfit = Outfit({
+const fraunces = Fraunces({
   variable: "--font-display",
+  subsets: ["latin"],
+  axes: ["SOFT", "WONK", "opsz"],
+});
+
+const jetbrains = JetBrains_Mono({
+  variable: "--font-mono",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Cloud Winit Solutions - Web & Mobile Development",
-  description: "Premium web applications, hybrid mobile apps, and ongoing support for scalable business systems.",
+  title: "Cloud Winit Solutions — Software, with Craft",
+  description: "A technology studio for ambitious teams. We build, automate, and maintain web apps, mobile apps, cloud platforms, CRM systems, and AI workflows.",
 };
 
 export default function RootLayout({
@@ -25,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${inter.variable} ${outfit.variable} antialiased`}
+        className={`${inter.variable} ${fraunces.variable} ${jetbrains.variable} antialiased`}
       >
         {children}
       </body>

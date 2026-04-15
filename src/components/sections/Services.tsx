@@ -1,113 +1,154 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Monitor, Smartphone, Workflow, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
+
+const services = [
+  {
+    n: "01",
+    title: "Web Applications",
+    body: "SaaS platforms, dashboards, portals, e-commerce. React, Next.js, and the modern stack, assembled with care.",
+  },
+  {
+    n: "02",
+    title: "Mobile Apps",
+    body: "Cross-platform iOS and Android with React Native and Expo. From first MVP to App Store and beyond.",
+  },
+  {
+    n: "03",
+    title: "Cloud Solutions",
+    body: "AWS, Azure, GCP. Migration, serverless, auto-scaling. Infrastructure that grows quietly with your business.",
+  },
+  {
+    n: "04",
+    title: "CRM Systems",
+    body: "Custom CRMs built around how your team actually works. Pipelines, reporting, integrations — no bloat.",
+  },
+  {
+    n: "05",
+    title: "AI Integrations",
+    body: "Chatbots, document intelligence, recommendation engines, generative features. Practical AI, not hype.",
+  },
+  {
+    n: "06",
+    title: "Automation",
+    body: "Workflow orchestration, scheduled jobs, cross-system syncing. The invisible plumbing your team will stop worrying about.",
+  },
+  {
+    n: "07",
+    title: "Support & Maintenance",
+    body: "Monitoring, bug fixes, performance tuning, security patches. Dedicated engineers who know your system.",
+  },
+  {
+    n: "08",
+    title: "Modernization",
+    body: "Legacy to modern stack. Monolith to services. The careful, unglamorous work of making old software new.",
+  },
+];
 
 export function Services() {
   return (
-    <section className="py-32 relative border-t border-white/5" id="services">
-      <div className="container mx-auto px-4 sm:px-6">
-        <div className="mb-16 md:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
-          <div className="max-w-2xl">
-            <motion.h2 
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="text-3xl md:text-4xl font-display font-medium mb-6 text-white tracking-tight"
-            >
-              Capabilities
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="text-zinc-400 text-lg leading-relaxed"
-            >
-              End-to-end engineering from system architecture to pixel-perfect interfaces. 
-              We build robust platforms designed to scale with your business.
-            </motion.p>
-          </div>
+    <section
+      id="services"
+      className="relative px-6 sm:px-10 lg:px-16 py-32 md:py-40"
+    >
+      {/* Section header */}
+      <div className="grid grid-cols-12 gap-6 mb-20 md:mb-28">
+        <div className="col-span-12 md:col-span-4">
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+            className="label-mono"
+            style={{ color: "var(--color-cream-dim)" }}
+          >
+            02 &nbsp;—&nbsp; services
+          </motion.p>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5 border border-white/5 rounded-2xl overflow-hidden">
-          
-          {/* Service 1 */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="bg-black p-10 group relative transition-colors"
+        <div className="col-span-12 md:col-span-8">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="display-serif text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] font-light max-w-4xl"
+            style={{ color: "var(--color-cream)" }}
           >
-            <div className="mb-6 flex justify-between items-start">
-               <div className="w-10 h-10 border border-white/10 rounded-md flex items-center justify-center bg-zinc-950 text-zinc-300">
-                 <Monitor size={18} />
-               </div>
-               <ArrowUpRight size={18} className="text-zinc-600 group-hover:text-white transition-colors" />
-            </div>
-            <h3 className="text-xl font-medium mb-3 text-white">Web Applications</h3>
-            <p className="text-sm text-zinc-400 leading-relaxed mb-6">
-              High-performance web platforms using React, Next.js, and modern backends. Accessible, responsive, and secure by default.
-            </p>
-            <ul className="text-sm text-zinc-500 space-y-2 font-mono">
-              <li>01. Front-end Architecture</li>
-              <li>02. API Development</li>
-              <li>03. Performance Tuning</li>
-            </ul>
-          </motion.div>
-
-          {/* Service 2 */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="bg-black p-10 group relative transition-colors"
+            Full-spectrum{" "}
+            <span className="display-serif-italic font-light" style={{ color: "var(--color-accent)" }}>
+              software
+            </span>{" "}
+            for every stage of the journey.
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="mt-8 max-w-2xl text-base leading-relaxed"
+            style={{ color: "var(--color-cream-muted)" }}
           >
-             <div className="mb-6 flex justify-between items-start">
-               <div className="w-10 h-10 border border-white/10 rounded-md flex items-center justify-center bg-zinc-950 text-zinc-300">
-                 <Smartphone size={18} />
-               </div>
-               <ArrowUpRight size={18} className="text-zinc-600 group-hover:text-white transition-colors" />
-            </div>
-            <h3 className="text-xl font-medium mb-3 text-white">Hybrid Mobile Apps</h3>
-            <p className="text-sm text-zinc-400 leading-relaxed mb-6">
-              Native-feeling mobile experiences for iOS and Android built from a single cohesive codebase.
-            </p>
-            <ul className="text-sm text-zinc-500 space-y-2 font-mono">
-              <li>01. React Native / Expo</li>
-              <li>02. Cross-platform UI</li>
-              <li>03. App Store Deployment</li>
-            </ul>
-          </motion.div>
+            We work across the lifecycle — discovery and design through to deployment and the long,
+            quiet years of maintenance. A single studio. One team. Senior engineers only.
+          </motion.p>
+        </div>
+      </div>
 
-          {/* Service 3 */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-black p-10 group relative transition-colors"
-          >
-             <div className="mb-6 flex justify-between items-start">
-               <div className="w-10 h-10 border border-white/10 rounded-md flex items-center justify-center bg-zinc-950 text-zinc-300">
-                 <Workflow size={18} />
-               </div>
-               <ArrowUpRight size={18} className="text-zinc-600 group-hover:text-white transition-colors" />
-            </div>
-            <h3 className="text-xl font-medium mb-3 text-white">System Architecture</h3>
-            <p className="text-sm text-zinc-400 leading-relaxed mb-6">
-              Scalable infrastructure, seamless deployments, and ongoing maintenance to ensure maximum uptime.
-            </p>
-            <ul className="text-sm text-zinc-500 space-y-2 font-mono">
-              <li>01. Cloud Infrastructure</li>
-              <li>02. CI/CD Pipelines</li>
-              <li>03. 24/7 Ongoing Support</li>
-            </ul>
-          </motion.div>
-        
+      {/* Editorial list */}
+      <div className="grid grid-cols-12 gap-6">
+        <div className="col-span-12 md:col-span-10 md:col-start-3">
+          <ul className="hairline" style={{ borderColor: "var(--color-rule)" }}>
+            {services.map((s, idx) => (
+              <motion.li
+                key={s.n}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{
+                  duration: 0.7,
+                  delay: (idx % 4) * 0.06,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
+                className="group border-b py-8 md:py-10"
+                style={{ borderColor: "var(--color-rule)" }}
+              >
+                <div className="grid grid-cols-12 gap-6 items-baseline">
+                  <div className="col-span-2 md:col-span-1">
+                    <span
+                      className="label-mono"
+                      style={{ color: "var(--color-cream-dim)" }}
+                    >
+                      {s.n}
+                    </span>
+                  </div>
+                  <div className="col-span-10 md:col-span-5">
+                    <h3
+                      className="display-serif text-3xl md:text-4xl font-light leading-tight transition-transform duration-500 group-hover:translate-x-2"
+                      style={{ color: "var(--color-cream)" }}
+                    >
+                      {s.title}
+                    </h3>
+                  </div>
+                  <div className="col-span-12 md:col-span-5 mt-3 md:mt-0">
+                    <p
+                      className="text-[15px] leading-relaxed"
+                      style={{ color: "var(--color-cream-muted)" }}
+                    >
+                      {s.body}
+                    </p>
+                  </div>
+                  <div className="col-span-12 md:col-span-1 md:justify-self-end">
+                    <ArrowUpRight
+                      size={20}
+                      className="opacity-40 group-hover:opacity-100 group-hover:-translate-y-1 group-hover:translate-x-1 transition-all duration-500"
+                      style={{ color: "var(--color-accent)" }}
+                    />
+                  </div>
+                </div>
+              </motion.li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

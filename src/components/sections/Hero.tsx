@@ -1,72 +1,124 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowDown } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-20" id="home">
-      {/* Subtle Dot Matrix Background */}
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNykiLz48L3N2Zz4=')] [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)] pointer-events-none" />
+    <section
+      id="home"
+      className="relative min-h-screen flex flex-col justify-between pt-32 pb-12 px-6 sm:px-10 lg:px-16 overflow-hidden"
+    >
+      {/* Subtle background glyph — oversized numeral */}
+      <div className="pointer-events-none absolute -bottom-20 -right-12 select-none opacity-[0.04]">
+        <span
+          className="display-serif-italic text-[40rem] leading-none text-cream"
+          style={{ color: "var(--color-cream)" }}
+        >
+          cws
+        </span>
+      </div>
 
-      <div className="container mx-auto px-4 sm:px-6 relative z-10 flex flex-col items-center">
-        <div className="max-w-3xl mx-auto text-center">
-          
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-8"
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-            <span className="text-xs font-medium text-zinc-300 uppercase tracking-wider">Accepting new projects</span>
-          </motion.div>
+      {/* Top label row */}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="relative z-10 flex items-center justify-between"
+      >
+        <span className="label-mono" style={{ color: "var(--color-cream-dim)" }}>
+          01 &nbsp;—&nbsp; overview
+        </span>
+        <span className="label-mono hidden sm:inline" style={{ color: "var(--color-cream-dim)" }}>
+          Est. Cloud Winit Solutions
+        </span>
+      </motion.div>
 
+      {/* Main content */}
+      <div className="relative z-10 grid grid-cols-12 gap-6 items-end my-16 md:my-24">
+        <div className="col-span-12 lg:col-span-9">
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-5xl sm:text-6xl md:text-7xl font-display font-medium tracking-tight mb-8 leading-[1.05] text-white"
+            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            className="display-serif text-[clamp(3.5rem,10vw,9rem)] leading-[0.92] font-light"
+            style={{ color: "var(--color-cream)" }}
           >
-            Build your next <br className="hidden sm:block" />
-            <span className="text-zinc-500">platform with us.</span>
+            We build,{" "}
+            <span className="display-serif-italic font-light" style={{ color: "var(--color-accent)" }}>
+              automate
+            </span>
+            ,
+            <br />
+            &amp; maintain{" "}
+            <span className="display-serif-italic font-light">software</span>
+            <br />
+            for serious teams.
           </motion.h1>
+        </div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="text-lg md:text-xl text-zinc-400 mb-10 max-w-xl mx-auto leading-relaxed"
+        {/* Asymmetric right column — pull quote */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+          className="col-span-12 lg:col-span-3 lg:pl-4 lg:pb-6 border-l hidden lg:block"
+          style={{ borderColor: "var(--color-rule)" }}
+        >
+          <p
+            className="display-serif-italic text-xl leading-snug pl-4"
+            style={{ color: "var(--color-cream-muted)" }}
           >
-            We design, build, and scale premium web applications and mobile experiences for modern startups.
-          </motion.p>
+            &ldquo;Long-term partners, not vendors.&rdquo;
+          </p>
+          <p className="label-mono pl-4 mt-3" style={{ color: "var(--color-cream-dim)" }}>
+            — Our approach
+          </p>
+        </motion.div>
+      </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
-          >
+      {/* Bottom row — description + CTAs */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.9, delay: 0.4 }}
+        className="relative z-10"
+      >
+        <div className="hairline pt-6 grid grid-cols-12 gap-6 items-start">
+          <div className="col-span-12 md:col-span-6">
+            <p
+              className="text-base leading-relaxed max-w-md"
+              style={{ color: "var(--color-cream-muted)" }}
+            >
+              A small technology studio for ambitious teams. Web apps, mobile, cloud,
+              CRM, AI workflows, and the ongoing craft of keeping software excellent.
+            </p>
+          </div>
+          <div className="col-span-12 md:col-span-6 flex flex-col sm:flex-row gap-6 sm:gap-10 md:justify-end">
             <a
               href="#contact"
-              className="group w-full sm:w-auto px-6 py-3 bg-white text-black text-sm rounded-md font-medium flex items-center justify-center gap-2 hover:bg-zinc-200 transition-all duration-200"
+              className="group inline-flex items-center gap-3 text-[15px] transition-colors"
+              style={{ color: "var(--color-cream)" }}
             >
-              Start a project
-              <ArrowRight className="group-hover:translate-x-0.5 transition-transform" size={16} />
+              <span
+                className="display-serif-italic text-lg underline-offset-[6px] decoration-[1px] group-hover:underline"
+                style={{ textDecorationColor: "var(--color-accent)" }}
+              >
+                Start a project
+              </span>
+              <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
             </a>
             <a
               href="#services"
-              className="w-full sm:w-auto px-6 py-3 text-sm text-zinc-300 rounded-md font-medium hover:text-white transition-colors flex items-center justify-center"
+              className="group inline-flex items-center gap-3 text-[15px] transition-colors"
+              style={{ color: "var(--color-cream-muted)" }}
             >
-              View capabilities
+              <span className="display-serif-italic text-lg">See capabilities</span>
+              <ArrowDown size={16} className="transition-transform group-hover:translate-y-1" />
             </a>
-          </motion.div>
-
+          </div>
         </div>
-      </div>
-      
-      {/* Subtle bottom gradient fade to match background */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent pointer-events-none" />
+      </motion.div>
     </section>
   );
 }
