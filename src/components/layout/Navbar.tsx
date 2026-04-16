@@ -5,10 +5,12 @@ import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { name: "Services", href: "#services", n: "02" },
-  { name: "Process", href: "#process", n: "04" },
-  { name: "Studio", href: "#about", n: "05" },
-  { name: "Contact", href: "#contact", n: "09" },
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Services", href: "/services" },
+  { name: "Industries", href: "/#industries" },
+  { name: "Process", href: "/#process" },
+  { name: "Testimonials", href: "/#testimonials" },
 ];
 
 export function Navbar() {
@@ -30,90 +32,82 @@ export function Navbar() {
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
       style={{
-        backgroundColor: isScrolled ? "rgba(14, 13, 11, 0.85)" : "transparent",
-        backdropFilter: isScrolled ? "blur(12px)" : "none",
-        borderBottom: isScrolled ? "1px solid var(--color-rule)" : "1px solid transparent",
+        backgroundColor: "rgba(255, 255, 255, 0.97)",
+        backdropFilter: "blur(12px)",
+        borderBottom: isScrolled ? "1px solid var(--color-gray-200)" : "1px solid transparent",
+        boxShadow: isScrolled ? "0 1px 3px rgba(0,0,0,0.05)" : "none",
       }}
     >
-      <div className="px-6 sm:px-10 lg:px-16 py-5">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-4">
         <div className="flex items-center justify-between">
-          <a href="#" className="flex items-center gap-3 group">
+          <a href="/" className="flex items-center gap-2">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18.5 17.5H6.5a4.5 4.5 0 0 1-.8-8.9 6.5 6.5 0 0 1 12.6-1.5 4.5 4.5 0 0 1 .2 10.4Z" stroke="var(--color-navy)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M9 13L12 16L15 13" stroke="var(--color-orange)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
             <span
-              className="display-serif-italic text-xl font-light tracking-tight"
-              style={{ color: "var(--color-cream)" }}
+              className="text-xl font-bold tracking-tight"
+              style={{ fontFamily: "var(--font-heading)", color: "var(--color-navy)" }}
             >
-              Cloud Winit
-            </span>
-            <span className="label-mono hidden sm:inline" style={{ color: "var(--color-cream-dim)" }}>
-              Solutions
+              Cloud Winit Solutions
             </span>
           </a>
 
-          <nav className="hidden md:flex items-center gap-10">
+          <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="group inline-flex items-baseline gap-1.5 transition-colors"
+                className="text-sm font-medium transition-colors hover:text-[var(--color-blue)]"
+                style={{ color: "var(--color-gray-600)" }}
               >
-                <span className="label-mono" style={{ color: "var(--color-cream-dim)" }}>
-                  {link.n}
-                </span>
-                <span
-                  className="text-[15px] transition-colors"
-                  style={{ color: "var(--color-cream-muted)" }}
-                >
-                  {link.name}
-                </span>
+                {link.name}
               </a>
             ))}
             <a
-              href="#contact"
-              className="group inline-flex items-center gap-2 text-[15px]"
-              style={{ color: "var(--color-cream)" }}
+              href="/#contact"
+              className="inline-flex h-10 items-center justify-center rounded-lg px-6 text-sm font-semibold text-white transition-all hover:opacity-90 shadow-md"
+              style={{ backgroundColor: "var(--color-orange)", fontFamily: "var(--font-heading)" }}
             >
-              <span
-                className="display-serif-italic underline-offset-[6px] decoration-[1px] group-hover:underline"
-                style={{ textDecorationColor: "var(--color-accent)" }}
-              >
-                Start a project
-              </span>
+              Contact Us
             </a>
           </nav>
 
           <button
-            className="md:hidden transition-colors"
-            style={{ color: "var(--color-cream)" }}
+            className="lg:hidden transition-colors"
+            style={{ color: "var(--color-navy)" }}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="md:hidden absolute top-full left-4 right-4 mt-4 p-6 rounded-sm flex flex-col gap-4"
-            style={{
-              backgroundColor: "var(--color-ink-elevated)",
-              border: "1px solid var(--color-rule)",
-            }}
+            className="lg:hidden absolute top-full left-4 right-4 mt-2 p-6 rounded-xl flex flex-col gap-1 bg-white border shadow-xl"
+            style={{ borderColor: "var(--color-gray-200)" }}
           >
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="flex items-baseline gap-3 py-2"
-                style={{ color: "var(--color-cream)" }}
+                className="py-3 px-4 rounded-lg text-sm font-medium transition-colors hover:bg-[var(--color-gray-50)]"
+                style={{ color: "var(--color-gray-700)" }}
                 onClick={() => setMobileMenuOpen(false)}
               >
-                <span className="label-mono" style={{ color: "var(--color-cream-dim)" }}>
-                  {link.n}
-                </span>
-                <span className="display-serif-italic text-xl font-light">{link.name}</span>
+                {link.name}
               </a>
             ))}
+            <a
+              href="/#contact"
+              className="mt-2 inline-flex h-10 items-center justify-center rounded-lg px-6 text-sm font-semibold text-white"
+              style={{ backgroundColor: "var(--color-orange)" }}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Contact Us
+            </a>
           </motion.div>
         )}
       </div>

@@ -1,47 +1,62 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
-import { Services } from "@/components/sections/Services";
-import { Stats } from "@/components/sections/Stats";
-import { HowWeWork } from "@/components/sections/HowWeWork";
 import { About } from "@/components/sections/About";
-import { TechStack } from "@/components/sections/TechStack";
+import { Services } from "@/components/sections/Services";
+import { Industries } from "@/components/sections/Industries";
+import { HowWeWork } from "@/components/sections/HowWeWork";
 import { Testimonials } from "@/components/sections/Testimonials";
 
 export default function Home() {
   return (
-    <main className="min-h-screen" style={{ backgroundColor: "var(--color-ink)", color: "var(--color-cream)" }}>
+    <main className="min-h-screen" style={{ backgroundColor: "var(--color-white)", color: "var(--color-gray-700)" }}>
       <Navbar />
       <Hero />
-      <Services />
-      <Stats />
-      <HowWeWork />
       <About />
-      <TechStack />
+      <Services />
+      <Industries />
+      <HowWeWork />
       <Testimonials />
 
       {/* Contact CTA Section */}
-      <section id="contact" className="py-24 md:py-32 relative border-t border-white/5">
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-500/5 rounded-full blur-[128px]" />
+      <section
+        id="contact"
+        className="py-20 md:py-28 relative overflow-hidden"
+        style={{ background: "linear-gradient(135deg, var(--color-navy) 0%, var(--color-blue) 100%)" }}
+      >
+        {/* CWS Watermark */}
+        <div className="absolute -right-12 top-1/2 -translate-y-1/2 text-[18rem] md:text-[24rem] font-extrabold uppercase text-white opacity-[0.04] pointer-events-none select-none leading-none tracking-tighter" style={{ fontFamily: "var(--font-heading)" }}>
+          cws
         </div>
-        <div className="container mx-auto px-4 sm:px-6 text-center relative z-10 flex flex-col items-center">
-          <div className="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center mb-6 shadow-lg shadow-blue-500/20">
-            <span className="w-2 h-2 bg-white rounded-full animate-pulse" />
-          </div>
-          <h2 className="text-4xl md:text-5xl font-display font-semibold mb-6 tracking-tight">
-            Let&apos;s Build Something{" "}
-            <span className="text-gradient">Great Together</span>
-          </h2>
-          <p className="text-zinc-400 mb-8 max-w-xl mx-auto text-lg">
-            Tell us about your project and we&apos;ll get back to you within 24 hours.
-          </p>
-          <a
-            href="mailto:hello@cloudwinitsolutions.com"
-            className="inline-flex h-12 items-center justify-center rounded-lg bg-blue-600 hover:bg-blue-500 px-8 text-sm font-medium text-white transition-all shadow-lg shadow-blue-500/25"
+
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 text-center relative z-10">
+          <h2
+            className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-5 tracking-tight"
+            style={{ fontFamily: "var(--font-heading)" }}
           >
-            Start a Conversation
-          </a>
+            Ready to Build Something Great?
+          </h2>
+          <p
+            className="text-base md:text-lg mb-10 max-w-xl mx-auto leading-relaxed"
+            style={{ color: "rgba(191, 219, 254, 0.8)" }}
+          >
+            Tell us about your project and we&apos;ll get back to you within 24 hours with a free consultation and proposal.
+          </p>
+          <div className="flex flex-wrap gap-4 justify-center">
+            <a
+              href="mailto:hello@cloudwinitsolutions.com"
+              className="inline-flex h-12 items-center justify-center rounded-lg px-8 text-sm font-semibold text-white transition-all hover:opacity-90 shadow-lg"
+              style={{ backgroundColor: "var(--color-orange)", fontFamily: "var(--font-heading)" }}
+            >
+              Get Free Consultation
+            </a>
+            <a
+              href="mailto:hello@cloudwinitsolutions.com"
+              className="inline-flex h-12 items-center justify-center rounded-lg px-8 text-sm font-medium text-white transition-all border border-white/30 hover:bg-white/10"
+            >
+              hello@cloudwinitsolutions.com
+            </a>
+          </div>
         </div>
       </section>
 

@@ -2,29 +2,35 @@
 
 @theme {
   /* Font Family */
-  --font-display: var(--font-display, "Fraunces", serif);
-  --font-body: var(--font-body, "Inter", sans-serif);
-  --font-mono: var(--font-mono, "JetBrains Mono", monospace);
+  --font-heading: var(--font-heading, "Sora", sans-serif);
+  --font-body: var(--font-body, "DM Sans", sans-serif);
 
-  /* Editorial Ink Palette — warm, not cold */
-  --color-ink: #0E0D0B;
-  --color-ink-elevated: #161411;
-  --color-ink-subtle: #1C1A16;
-  --color-cream: #F2EDE4;
-  --color-cream-muted: #BDB5A6;
-  --color-cream-dim: #8A827A;
-  --color-accent: #D97757;
-  --color-accent-dim: #A85F44;
-  --color-rule: rgba(242, 237, 228, 0.12);
-  --color-rule-soft: rgba(242, 237, 228, 0.06);
+  /* Navy & Orange Professional Palette */
+  --color-navy: #1e3a5f;
+  --color-navy-dark: #0f1f33;
+  --color-navy-light: #2a5080;
+  --color-blue: #2563eb;
+  --color-blue-light: #3b82f6;
+  --color-orange: #ea580c;
+  --color-orange-light: #f97316;
+  --color-gray-50: #f8fafc;
+  --color-gray-100: #f1f5f9;
+  --color-gray-200: #e2e8f0;
+  --color-gray-300: #cbd5e1;
+  --color-gray-500: #64748b;
+  --color-gray-600: #475569;
+  --color-gray-700: #334155;
+  --color-gray-800: #1e293b;
+  --color-gray-900: #0f172a;
+  --color-white: #ffffff;
 
   /* Animations */
-  --animate-fade-up: fade-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-fade-up: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 
   @keyframes fade-up {
     from {
       opacity: 0;
-      transform: translateY(16px);
+      transform: translateY(20px);
     }
     to {
       opacity: 1;
@@ -33,36 +39,9 @@
   }
 }
 
-/* Utilities */
-@utility display-serif {
-  font-family: var(--font-display);
-  font-variation-settings: "opsz" 144, "SOFT" 50, "WONK" 0;
-  letter-spacing: -0.03em;
-  font-feature-settings: "ss01", "ss02";
-}
-
-@utility display-serif-italic {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
-  letter-spacing: -0.02em;
-}
-
-@utility label-mono {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  font-weight: 500;
-}
-
-@utility hairline {
-  border-top: 1px solid var(--color-rule);
-}
-
 /* Base */
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 html {
@@ -70,14 +49,28 @@ html {
 }
 
 body {
-  background-color: var(--color-ink);
-  color: var(--color-cream);
+  background-color: var(--color-white);
+  color: var(--color-gray-700);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 ::selection {
-  background: var(--color-accent);
-  color: var(--color-ink);
+  background: var(--color-orange);
+  color: white;
+}
+
+/* CWS Watermark */
+@utility watermark {
+  position: absolute;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--color-navy);
+  opacity: 0.03;
+  pointer-events: none;
+  user-select: none;
+  line-height: 0.85;
+  letter-spacing: -0.04em;
 }
