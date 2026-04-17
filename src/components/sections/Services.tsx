@@ -1,48 +1,57 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { Globe, Smartphone, Cloud, Bot, Wrench, Shield } from "lucide-react";
+import Link from "next/link";
 
 const services = [
   {
-    n: "01",
-    title: "Web Applications",
-    body: "SaaS platforms, dashboards, portals, e-commerce. React, Next.js, and the modern stack, assembled with care.",
+    icon: Globe,
+    title: "Custom Web Applications",
+    body: "We build scalable, secure web applications tailored to your business — from e-commerce platforms and inventory management systems to HR portals, booking engines, and internal business tools. Built with modern technologies for speed and reliability.",
+    color: "var(--color-blue)",
+    bg: "#eff6ff",
+    href: "/services/web-applications",
   },
   {
-    n: "02",
-    title: "Mobile Apps",
-    body: "Cross-platform iOS and Android with React Native and Expo. From first MVP to App Store and beyond.",
+    icon: Smartphone,
+    title: "Hybrid Mobile Apps",
+    body: "Cross-platform iOS and Android apps built with a single codebase. Whether it's a healthcare app, logistics tracker, fintech solution, or customer-facing mobile tool — we deliver native-quality experiences on both platforms.",
+    color: "var(--color-orange)",
+    bg: "#fff7ed",
+    href: "/services/mobile-apps",
   },
   {
-    n: "03",
+    icon: Cloud,
     title: "Cloud Solutions",
-    body: "AWS, Azure, GCP. Migration, serverless, auto-scaling. Infrastructure that grows quietly with your business.",
+    body: "Cloud migration, serverless architecture, and auto-scaling infrastructure on AWS, Azure, or GCP. We help you move to the cloud or optimize what you already have — so your infrastructure grows quietly with your business.",
+    color: "#16a34a",
+    bg: "#f0fdf4",
+    href: "/services/cloud-solutions",
   },
   {
-    n: "04",
-    title: "CRM Systems",
-    body: "Custom CRMs built around how your team actually works. Pipelines, reporting, integrations — no bloat.",
+    icon: Bot,
+    title: "AI & Automation",
+    body: "Intelligent chatbots, document processing, workflow automation, and AI-powered features integrated into your existing systems. Practical AI that saves time and reduces manual work — not just hype.",
+    color: "#7c3aed",
+    bg: "#f5f3ff",
+    href: "/services/ai-automation",
   },
   {
-    n: "05",
-    title: "AI Integrations",
-    body: "Chatbots, document intelligence, recommendation engines, generative features. Practical AI, not hype.",
+    icon: Wrench,
+    title: "CRM & Business Tools",
+    body: "Custom CRM systems and internal business tools built around how your team actually works. Sales pipelines, reporting dashboards, client management, and integrations with your existing software — no bloat, just what you need.",
+    color: "#0d9488",
+    bg: "#f0fdfa",
+    href: "/services/crm-business-tools",
   },
   {
-    n: "06",
-    title: "Automation",
-    body: "Workflow orchestration, scheduled jobs, cross-system syncing. The invisible plumbing your team will stop worrying about.",
-  },
-  {
-    n: "07",
+    icon: Shield,
     title: "Support & Maintenance",
-    body: "Monitoring, bug fixes, performance tuning, security patches. Dedicated engineers who know your system.",
-  },
-  {
-    n: "08",
-    title: "Modernization",
-    body: "Legacy to modern stack. Monolith to services. The careful, unglamorous work of making old software new.",
+    body: "Ongoing application monitoring, bug fixes, performance optimization, security patches, and feature updates. We keep your existing applications running smoothly and evolving with your business needs. Dedicated engineers who know your system inside out.",
+    color: "#dc2626",
+    bg: "#fef2f2",
+    href: "/services/support-maintenance",
   },
 ];
 
@@ -50,105 +59,83 @@ export function Services() {
   return (
     <section
       id="services"
-      className="relative px-6 sm:px-10 lg:px-16 py-32 md:py-40"
+      className="py-20 md:py-28 relative"
+      style={{ backgroundColor: "var(--color-gray-50)" }}
     >
-      {/* Section header */}
-      <div className="grid grid-cols-12 gap-6 mb-20 md:mb-28">
-        <div className="col-span-12 md:col-span-4">
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
-            className="label-mono"
-            style={{ color: "var(--color-cream-dim)" }}
-          >
-            02 &nbsp;—&nbsp; services
-          </motion.p>
-        </div>
-        <div className="col-span-12 md:col-span-8">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        {/* Section Header */}
+        <div className="text-center mb-14">
+          <motion.span
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="display-serif text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] font-light max-w-4xl"
-            style={{ color: "var(--color-cream)" }}
+            transition={{ duration: 0.5 }}
+            className="inline-block text-xs font-bold uppercase tracking-[0.2em] mb-3"
+            style={{ color: "var(--color-orange)", fontFamily: "var(--font-heading)" }}
           >
-            Full-spectrum{" "}
-            <span className="display-serif-italic font-light" style={{ color: "var(--color-accent)" }}>
-              software
-            </span>{" "}
-            for every stage of the journey.
+            Our Services
+          </motion.span>
+          <motion.h2
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4"
+            style={{ fontFamily: "var(--font-heading)", color: "var(--color-navy)" }}
+          >
+            What We Build & Support
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-8 max-w-2xl text-base leading-relaxed"
-            style={{ color: "var(--color-cream-muted)" }}
+            transition={{ duration: 0.5, delay: 0.15 }}
+            className="text-base md:text-lg leading-relaxed max-w-2xl mx-auto"
+            style={{ color: "var(--color-gray-500)" }}
           >
-            We work across the lifecycle — discovery and design through to deployment and the long,
-            quiet years of maintenance. A single studio. One team. Senior engineers only.
+            End-to-end software solutions designed to help your business operate smarter, serve customers better, and grow faster.
           </motion.p>
         </div>
-      </div>
 
-      {/* Editorial list */}
-      <div className="grid grid-cols-12 gap-6">
-        <div className="col-span-12 md:col-span-10 md:col-start-3">
-          <ul className="hairline" style={{ borderColor: "var(--color-rule)" }}>
-            {services.map((s, idx) => (
-              <motion.li
-                key={s.n}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{
-                  duration: 0.7,
-                  delay: (idx % 4) * 0.06,
-                  ease: [0.16, 1, 0.3, 1],
-                }}
-                className="group border-b py-8 md:py-10"
-                style={{ borderColor: "var(--color-rule)" }}
+        {/* Service Cards — 2 per row */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {services.map((s, idx) => (
+            <motion.div
+              key={s.title}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{
+                duration: 0.6,
+                delay: (idx % 4) * 0.08,
+                ease: [0.16, 1, 0.3, 1],
+              }}
+              className="group bg-white rounded-xl border p-7 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
+              style={{
+                borderColor: "var(--color-gray-200)",
+                borderTop: `3px solid ${s.color}`,
+              }}
+            >
+              <div
+                className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
+                style={{ backgroundColor: s.bg }}
               >
-                <div className="grid grid-cols-12 gap-6 items-baseline">
-                  <div className="col-span-2 md:col-span-1">
-                    <span
-                      className="label-mono"
-                      style={{ color: "var(--color-cream-dim)" }}
-                    >
-                      {s.n}
-                    </span>
-                  </div>
-                  <div className="col-span-10 md:col-span-5">
-                    <h3
-                      className="display-serif text-3xl md:text-4xl font-light leading-tight transition-transform duration-500 group-hover:translate-x-2"
-                      style={{ color: "var(--color-cream)" }}
-                    >
-                      {s.title}
-                    </h3>
-                  </div>
-                  <div className="col-span-12 md:col-span-5 mt-3 md:mt-0">
-                    <p
-                      className="text-[15px] leading-relaxed"
-                      style={{ color: "var(--color-cream-muted)" }}
-                    >
-                      {s.body}
-                    </p>
-                  </div>
-                  <div className="col-span-12 md:col-span-1 md:justify-self-end">
-                    <ArrowUpRight
-                      size={20}
-                      className="opacity-40 group-hover:opacity-100 group-hover:-translate-y-1 group-hover:translate-x-1 transition-all duration-500"
-                      style={{ color: "var(--color-accent)" }}
-                    />
-                  </div>
-                </div>
-              </motion.li>
-            ))}
-          </ul>
+                <s.icon size={24} style={{ color: s.color }} />
+              </div>
+              <h3
+                className="text-lg font-bold mb-3"
+                style={{ fontFamily: "var(--font-heading)", color: "var(--color-navy)" }}
+              >
+                {s.title}
+              </h3>
+              <p className="text-sm leading-relaxed mb-4" style={{ color: "var(--color-gray-500)" }}>
+                {s.body}
+              </p>
+              <Link href={s.href} className="text-sm font-semibold inline-block" style={{ color: "var(--color-orange)" }}>
+                Learn More →
+              </Link>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
