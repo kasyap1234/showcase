@@ -66,8 +66,8 @@ export function Hero() {
                 className="text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold leading-[1.15] tracking-tight mb-6"
                 style={{ fontFamily: "var(--font-heading)", color: "var(--color-navy)" }}
               >
-                Empowering Businesses With{" "}
-                <span style={{ color: "var(--color-blue)" }}>Custom Software Solutions</span>
+                Helping businesses reduce costs and scale faster with{" "}
+                <span style={{ color: "var(--color-blue)" }}>custom software</span>
               </motion.h1>
 
               <motion.p
@@ -77,7 +77,7 @@ export function Hero() {
                 className="text-base md:text-lg leading-relaxed mb-8 max-w-lg"
                 style={{ color: "var(--color-gray-500)" }}
               >
-                We design, develop, and maintain web applications, hybrid mobile apps,
+                From idea to launch, we build web applications, hybrid mobile apps,
                 and cloud platforms that help businesses streamline operations, reduce costs,
                 and scale with confidence.
               </motion.p>
