@@ -59,7 +59,7 @@ export function Services() {
   return (
     <section
       id="services"
-      className="py-20 md:py-28 relative"
+      className="py-16 md:py-28 relative"
       style={{ backgroundColor: "var(--color-gray-50)" }}
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">

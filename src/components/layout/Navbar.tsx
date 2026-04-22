@@ -86,14 +86,14 @@ export function Navbar() {
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="lg:hidden absolute top-full left-4 right-4 mt-2 p-6 rounded-xl flex flex-col gap-1 bg-white border shadow-xl"
+            className="lg:hidden absolute top-full left-4 right-4 mt-2 p-4 sm:p-6 rounded-xl flex flex-col gap-2 bg-white border shadow-2xl"
             style={{ borderColor: "var(--color-gray-200)" }}
           >
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="py-3 px-4 rounded-lg text-sm font-medium transition-colors hover:bg-[var(--color-gray-50)]"
+                className="py-3.5 px-4 rounded-lg text-[15px] font-medium transition-colors hover:bg-[var(--color-gray-50)] active:bg-[var(--color-gray-100)]"
                 style={{ color: "var(--color-gray-700)" }}
                 onClick={() => setMobileMenuOpen(false)}
               >
@@ -102,8 +102,8 @@ export function Navbar() {
             ))}
             <a
               href="/#contact"
-              className="mt-2 inline-flex h-10 items-center justify-center rounded-lg px-6 text-sm font-semibold text-white"
-              style={{ backgroundColor: "var(--color-orange)" }}
+              className="mt-2 inline-flex h-12 items-center justify-center rounded-lg px-6 text-[15px] font-semibold text-white shadow-md active:opacity-90"
+              style={{ backgroundColor: "var(--color-orange)", fontFamily: "var(--font-heading)" }}
               onClick={() => setMobileMenuOpen(false)}
             >
               Contact Us

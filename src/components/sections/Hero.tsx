@@ -39,12 +39,12 @@ export function Hero() {
   return (
     <section id="home" className="relative overflow-hidden">
       {/* CWS Watermark */}
-      <div className="watermark absolute -right-8 top-1/2 -translate-y-1/2 text-[20rem] md:text-[28rem] lg:text-[36rem] z-0">
+      <div className="watermark absolute -right-4 sm:-right-8 top-1/2 -translate-y-1/2 text-[12rem] sm:text-[16rem] md:text-[28rem] lg:text-[36rem] z-0 opacity-5 sm:opacity-[0.03]">
         cws
       </div>
 
       {/* Hero Content */}
-      <div className="relative z-10 pt-28 pb-16" style={{ background: "linear-gradient(180deg, var(--color-gray-50) 0%, var(--color-white) 100%)" }}>
+      <div className="relative z-10 pt-32 pb-16 md:pt-40 md:pb-24" style={{ background: "linear-gradient(180deg, var(--color-gray-50) 0%, var(--color-white) 100%)" }}>
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[480px]">
             {/* Left Content */}
@@ -63,7 +63,7 @@ export function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold leading-[1.15] tracking-tight mb-6"
+                className="text-4xl sm:text-5xl lg:text-[3.25rem] font-extrabold leading-[1.15] tracking-tight mb-6"
                 style={{ fontFamily: "var(--font-heading)", color: "var(--color-navy)" }}
               >
                 Helping businesses reduce costs and scale faster with{" "}
@@ -86,11 +86,11 @@ export function Hero() {
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="flex flex-wrap gap-4"
+                className="flex flex-col sm:flex-row gap-4"
               >
                 <a
                   href="#contact"
-                  className="group inline-flex h-12 items-center justify-center rounded-lg px-7 text-sm font-semibold text-white transition-all hover:shadow-lg"
+                  className="group inline-flex w-full sm:w-auto h-14 sm:h-12 items-center justify-center rounded-lg px-7 text-sm font-semibold text-white transition-all hover:shadow-lg"
                   style={{ backgroundColor: "var(--color-orange)", fontFamily: "var(--font-heading)" }}
                 >
                   Get Free Consultation
@@ -98,7 +98,7 @@ export function Hero() {
                 </a>
                 <a
                   href="/services"
-                  className="inline-flex h-12 items-center justify-center rounded-lg px-7 text-sm font-semibold border-2 transition-all text-[var(--color-navy)] border-[var(--color-navy)] hover:bg-[var(--color-navy)] hover:text-white"
+                  className="inline-flex w-full sm:w-auto h-14 sm:h-12 items-center justify-center rounded-lg px-7 text-sm font-semibold border-2 transition-all text-[var(--color-navy)] border-[var(--color-navy)] hover:bg-[var(--color-navy)] hover:text-white"
                   style={{ fontFamily: "var(--font-heading)" }}
                 >
                   Explore Services
@@ -145,8 +145,8 @@ export function Hero() {
         className="relative z-10"
         style={{ backgroundColor: "var(--color-navy)" }}
       >
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-10 md:py-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-8">
             {stats.map((stat, idx) => (
               <div key={stat.label} className="text-center">
                 <div

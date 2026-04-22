@@ -36,7 +36,7 @@ const differentiators = [
 
 export function About() {
   return (
-    <section className="py-20 md:py-28 relative" id="about" style={{ backgroundColor: "var(--color-white)" }}>
+    <section className="py-16 md:py-28 relative" id="about" style={{ backgroundColor: "var(--color-white)" }}>
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         {/* Section Header */}
         <div className="text-center mb-14">
@@ -62,7 +62,7 @@ export function About() {
           </motion.h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
           {/* Left: Company Story */}
           <div>
             <motion.p
