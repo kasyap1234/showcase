@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ArrowRight, Github, Linkedin, Twitter } from "lucide-react";
+import { Menu, X, ArrowRight, Globe, Mail, MessageCircle } from "lucide-react";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -134,7 +134,7 @@ export function Navbar() {
                   </a>
                   
                   <div className="flex items-center justify-center gap-6 mt-8">
-                    {[Linkedin, Twitter, Github].map((Icon, i) => (
+                    {[Globe, Mail, MessageCircle].map((Icon, i) => (
                       <motion.a
                         key={i}
                         href="#"
