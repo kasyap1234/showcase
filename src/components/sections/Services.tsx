@@ -97,8 +97,8 @@ export function Services() {
           </motion.p>
         </div>
 
-        {/* Service Cards — 2 per row */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Service Cards — 3 per row */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((s, idx) => (
             <motion.div
               key={s.title}
@@ -107,7 +107,7 @@ export function Services() {
               viewport={{ once: true, margin: "-50px" }}
               transition={{
                 duration: 0.6,
-                delay: (idx % 4) * 0.08,
+                delay: (idx % 3) * 0.1,
                 ease: [0.16, 1, 0.3, 1],
               }}
               className="group bg-white rounded-xl border p-7 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"

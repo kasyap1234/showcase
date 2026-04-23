@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Search, PenTool, Code2, Rocket } from "lucide-react";
+import { Search, BarChart3, PenTool, Code2, CheckCircle2, Rocket } from "lucide-react";
 
 const steps = [
   {
@@ -11,22 +11,34 @@ const steps = [
     description: "We understand your business, goals, and challenges before writing a single line of code.",
   },
   {
-    icon: PenTool,
+    icon: BarChart3,
     number: "2",
+    title: "Strategy",
+    description: "We define the roadmap, tech stack, and project milestones to ensure a smooth execution.",
+  },
+  {
+    icon: PenTool,
+    number: "3",
     title: "Design",
-    description: "We create wireframes and prototypes so you can see and validate the solution before development begins.",
+    description: "We create wireframes and high-fidelity prototypes to validate the UX before development.",
   },
   {
     icon: Code2,
-    number: "3",
+    number: "4",
     title: "Development",
-    description: "Agile sprints with regular demos and feedback loops. You're involved at every step, not just the end.",
+    description: "Agile development with regular demos, ensuring the product evolves based on your feedback.",
+  },
+  {
+    icon: CheckCircle2,
+    number: "5",
+    title: "QA & Testing",
+    description: "Rigorous testing across devices and browsers to ensure a bug-free and high-performance launch.",
   },
   {
     icon: Rocket,
-    number: "4",
+    number: "6",
     title: "Deploy & Support",
-    description: "We launch, monitor, and continuously improve. Our partnership doesn't end at deployment — we're here for the long haul.",
+    description: "We launch, monitor, and provide ongoing support to keep your application evolving.",
   },
 ];
 
@@ -69,12 +81,7 @@ export function HowWeWork() {
         </div>
 
         {/* Steps */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
-          {/* Connecting line (desktop only) */}
-          <div
-            className="hidden md:block absolute top-8 left-[12.5%] right-[12.5%] h-0.5"
-            style={{ backgroundColor: "var(--color-gray-200)" }}
-          />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-12 gap-x-8 relative">
 
           {steps.map((step, idx) => (
             <motion.div
@@ -88,7 +95,7 @@ export function HowWeWork() {
               <div
                 className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-5 relative z-10 shadow-md"
                 style={{
-                  backgroundColor: idx === 3 ? "var(--color-orange)" : "var(--color-navy)",
+                  backgroundColor: idx === steps.length - 1 ? "var(--color-orange)" : "var(--color-navy)",
                 }}
               >
                 <span
