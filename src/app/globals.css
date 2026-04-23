@@ -61,16 +61,4 @@ body {
   color: white;
 }
 
-/* CWS Watermark */
-@utility watermark {
-  position: absolute;
-  font-family: var(--font-heading);
-  font-weight: 800;
-  text-transform: uppercase;
-  color: var(--color-navy);
-  opacity: 0.03;
-  pointer-events: none;
-  user-select: none;
-  line-height: 0.85;
-  letter-spacing: -0.04em;
-}
+

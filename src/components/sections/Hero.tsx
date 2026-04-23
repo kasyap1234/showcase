@@ -38,11 +38,6 @@ const stats = [
 export function Hero() {
   return (
     <section id="home" className="relative overflow-hidden">
-      {/* CWS Watermark */}
-      <div className="watermark absolute -right-4 sm:-right-8 top-1/2 -translate-y-1/2 text-[12rem] sm:text-[16rem] md:text-[28rem] lg:text-[36rem] z-0 opacity-5 sm:opacity-[0.03]">
-        cws
-      </div>
-
       {/* Hero Content */}
       <div className="relative z-10 pt-32 pb-16 md:pt-40 md:pb-24" style={{ background: "linear-gradient(180deg, var(--color-gray-50) 0%, var(--color-white) 100%)" }}>
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">

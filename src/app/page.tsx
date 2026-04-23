@@ -24,11 +24,6 @@ export default function Home() {
         className="py-20 md:py-28 relative overflow-hidden"
         style={{ background: "linear-gradient(135deg, var(--color-navy) 0%, var(--color-blue) 100%)" }}
       >
-        {/* CWS Watermark */}
-        <div className="absolute -right-12 top-1/2 -translate-y-1/2 text-[18rem] md:text-[24rem] font-extrabold uppercase text-white opacity-[0.04] pointer-events-none select-none leading-none tracking-tighter" style={{ fontFamily: "var(--font-heading)" }}>
-          cws
-        </div>
-
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 text-center relative z-10">
           <h2
             className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-5 tracking-tight"
