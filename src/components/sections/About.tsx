@@ -36,8 +36,8 @@ const differentiators = [
 
 export function About() {
   return (
-    <section className="py-16 md:py-28 relative" id="about" style={{ backgroundColor: "var(--color-white)" }}>
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+    <section className="relative overflow-hidden" id="about" style={{ backgroundColor: "var(--color-white)", paddingBlock: "var(--section-py)" }}>
+      <div className="max-w-7xl mx-auto px-[var(--container-px)]">
         {/* Section Header */}
         <div className="text-center mb-14">
           <motion.span
@@ -56,7 +56,11 @@ export function About() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4"
-            style={{ fontFamily: "var(--font-heading)", color: "var(--color-navy)" }}
+            style={{ 
+              fontFamily: "var(--font-heading)", 
+              color: "var(--color-navy)",
+              fontSize: "clamp(1.875rem, 6vw, 2.25rem)"
+            }}
           >
             Who We Are
           </motion.h2>

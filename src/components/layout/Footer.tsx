@@ -3,7 +3,7 @@ import { Mail, Phone, MapPin, Link2, Globe, MessageCircle } from "lucide-react";
 export function Footer() {
   return (
     <footer style={{ backgroundColor: "var(--color-navy-dark)" }}>
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-16 pb-8">
+      <div className="max-w-7xl mx-auto px-[var(--container-px)] pt-16 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Company Info */}
           <div className="lg:col-span-1">

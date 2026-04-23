@@ -38,8 +38,11 @@ const stats = [
 export function Hero() {
   return (
     <section id="home" className="relative overflow-hidden">
+      {/* Mesh Background for Mobile */}
+      <div className="lg:hidden mesh-bg" />
+
       {/* Hero Content */}
-      <div className="relative z-10 pt-32 pb-16 md:pt-40 md:pb-24" style={{ background: "linear-gradient(180deg, var(--color-gray-50) 0%, var(--color-white) 100%)" }}>
+      <div className="relative z-10 pt-28 pb-16 md:pt-40 md:pb-24" style={{ background: "linear-gradient(180deg, var(--color-gray-50) 0%, var(--color-white) 100%)" }}>
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[480px]">
             {/* Left Content */}
@@ -59,7 +62,11 @@ export function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
                 className="text-4xl sm:text-5xl lg:text-[3.25rem] font-extrabold leading-[1.15] tracking-tight mb-6"
-                style={{ fontFamily: "var(--font-heading)", color: "var(--color-navy)" }}
+                style={{ 
+                  fontFamily: "var(--font-heading)", 
+                  color: "var(--color-navy)",
+                  fontSize: "clamp(2.25rem, 8vw, 3.25rem)"
+                }}
               >
                 Helping businesses reduce costs and scale faster with{" "}
                 <span style={{ color: "var(--color-blue)" }}>custom software</span>
@@ -85,7 +92,7 @@ export function Hero() {
               >
                 <a
                   href="#contact"
-                  className="group inline-flex w-full sm:w-auto h-14 sm:h-12 items-center justify-center rounded-lg px-7 text-sm font-semibold text-white transition-all hover:shadow-lg"
+                  className="group inline-flex w-full sm:w-auto h-14 sm:h-12 items-center justify-center rounded-xl px-8 text-[15px] font-bold text-white transition-all hover:shadow-xl hover:scale-[1.02] active:scale-[0.98]"
                   style={{ backgroundColor: "var(--color-orange)", fontFamily: "var(--font-heading)" }}
                 >
                   Get Free Consultation
@@ -93,7 +100,7 @@ export function Hero() {
                 </a>
                 <a
                   href="/services"
-                  className="inline-flex w-full sm:w-auto h-14 sm:h-12 items-center justify-center rounded-lg px-7 text-sm font-semibold border-2 transition-all text-[var(--color-navy)] border-[var(--color-navy)] hover:bg-[var(--color-navy)] hover:text-white"
+                  className="inline-flex w-full sm:w-auto h-14 sm:h-12 items-center justify-center rounded-xl px-8 text-[15px] font-bold border-2 transition-all text-[var(--color-navy)] border-[var(--color-navy)] hover:bg-[var(--color-navy)] hover:text-white active:scale-[0.98]"
                   style={{ fontFamily: "var(--font-heading)" }}
                 >
                   Explore Services

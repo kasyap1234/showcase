@@ -59,10 +59,10 @@ export function Services() {
   return (
     <section
       id="services"
-      className="py-16 md:py-28 relative"
-      style={{ backgroundColor: "var(--color-gray-50)" }}
+      className="relative"
+      style={{ backgroundColor: "var(--color-gray-50)", paddingBlock: "var(--section-py)" }}
     >
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+      <div className="max-w-7xl mx-auto px-[var(--container-px)]">
         {/* Section Header */}
         <div className="text-center mb-14">
           <motion.span
@@ -81,7 +81,11 @@ export function Services() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4"
-            style={{ fontFamily: "var(--font-heading)", color: "var(--color-navy)" }}
+            style={{ 
+              fontFamily: "var(--font-heading)", 
+              color: "var(--color-navy)",
+              fontSize: "clamp(1.875rem, 6vw, 2.25rem)"
+            }}
           >
             What We Build & Support
           </motion.h2>

@@ -21,13 +21,19 @@ export default function Home() {
       {/* Contact CTA Section */}
       <section
         id="contact"
-        className="py-20 md:py-28 relative overflow-hidden"
-        style={{ background: "linear-gradient(135deg, var(--color-navy) 0%, var(--color-blue) 100%)" }}
+        className="relative overflow-hidden"
+        style={{ 
+          background: "linear-gradient(135deg, var(--color-navy) 0%, var(--color-blue) 100%)",
+          paddingBlock: "var(--section-py)"
+        }}
       >
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 text-center relative z-10">
+        <div className="max-w-7xl mx-auto px-[var(--container-px)] text-center relative z-10">
           <h2
             className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-5 tracking-tight"
-            style={{ fontFamily: "var(--font-heading)" }}
+            style={{ 
+              fontFamily: "var(--font-heading)",
+              fontSize: "clamp(2rem, 8vw, 3rem)"
+            }}
           >
             Ready to Build Something Great?
           </h2>
