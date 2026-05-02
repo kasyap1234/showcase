@@ -45,17 +45,17 @@ export default function Home() {
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <a
-              href="mailto:hello@cloudwinitsolutions.com"
+              href="mailto:Support@cloudwinitsolutions.com"
               className="inline-flex h-12 items-center justify-center rounded-lg px-8 text-sm font-semibold text-white transition-all hover:opacity-90 shadow-lg"
               style={{ backgroundColor: "var(--color-orange)", fontFamily: "var(--font-heading)" }}
             >
               Get Free Consultation
             </a>
             <a
-              href="mailto:hello@cloudwinitsolutions.com"
+              href="mailto:Support@cloudwinitsolutions.com"
               className="inline-flex h-12 items-center justify-center rounded-lg px-8 text-sm font-medium text-white transition-all border border-white/30 hover:bg-white/10"
             >
-              hello@cloudwinitsolutions.com
+              Support@cloudwinitsolutions.com
             </a>
           </div>
         </div>

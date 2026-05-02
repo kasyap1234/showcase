@@ -387,7 +387,7 @@ export default function AIAutomationPage() {
         heading="Ready to Automate?"
         description="Let's find the AI solution that delivers real ROI for your business."
         buttonText="Get Free Consultation"
-        buttonHref="mailto:hello@cloudwinitsolutions.com"
+        buttonHref="mailto:Support@cloudwinitsolutions.com"
       />
 
       <Footer />

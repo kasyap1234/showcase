@@ -388,7 +388,7 @@ export default function SupportMaintenancePage() {
         heading="Need Application Support?"
         description="Let's keep your software running at its best."
         buttonText="Get Free Consultation"
-        buttonHref="mailto:hello@cloudwinitsolutions.com"
+        buttonHref="mailto:Support@cloudwinitsolutions.com"
       />
 
       <Footer />

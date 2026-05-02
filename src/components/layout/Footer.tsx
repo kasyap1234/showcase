@@ -81,15 +81,15 @@ export function Footer() {
             <ul className="flex flex-col gap-4">
               <li className="flex items-start gap-3">
                 <Mail size={16} className="text-white/60 mt-0.5 flex-shrink-0" />
-                <a href="mailto:hello@cloudwinitsolutions.com" className="text-sm hover:text-white transition-colors" style={{ color: "rgba(147, 197, 253, 0.7)" }}>
-                  hello@cloudwinitsolutions.com
+                <a href="mailto:Support@cloudwinitsolutions.com" className="text-sm hover:text-white transition-colors" style={{ color: "rgba(147, 197, 253, 0.7)" }}>
+                  Support@cloudwinitsolutions.com
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <Phone size={16} className="text-white/60 mt-0.5 flex-shrink-0" />
-                <span className="text-sm" style={{ color: "rgba(147, 197, 253, 0.7)" }}>
-                  +91-XXXXX-XXXXX
-                </span>
+                <a href="tel:+919966339344" className="text-sm hover:text-white transition-colors" style={{ color: "rgba(147, 197, 253, 0.7)" }}>
+                  +91 99663 39344
+                </a>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin size={16} className="text-white/60 mt-0.5 flex-shrink-0" />

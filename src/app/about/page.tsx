@@ -374,7 +374,7 @@ export default function AboutPage() {
         heading="Ready to Work With Us?"
         description="Let's discuss how we can help your business grow with custom software solutions."
         buttonText="Get Free Consultation"
-        buttonHref="mailto:hello@cloudwinitsolutions.com"
+        buttonHref="mailto:Support@cloudwinitsolutions.com"
       />
 
       <Footer />
