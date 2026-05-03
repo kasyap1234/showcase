@@ -14,6 +14,9 @@ import {
   Zap,
   Handshake,
   ShieldCheck,
+  GraduationCap,
+  CheckCircle,
+  BadgeIndianRupee,
 } from "lucide-react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -369,7 +372,170 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 6. CTA Banner */}
+
+      {/* 6. Talent Consultancy Programme */}
+      <section className="py-20 md:py-28" style={{ backgroundColor: "var(--color-white)" }}>
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+
+          {/* Header */}
+          <motion.div {...fadeUp} className="text-center mb-14">
+            <p
+              className="text-xs font-bold uppercase tracking-[0.2em] mb-3"
+              style={{ color: "var(--color-orange)", fontFamily: "var(--font-heading)" }}
+            >
+              OUR CONSULTANCY PROGRAMME
+            </p>
+            <h2
+              className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4"
+              style={{ color: "var(--color-navy)", fontFamily: "var(--font-heading)" }}
+            >
+              Talent Consultancy &amp; Career Placement
+            </h2>
+            <p
+              className="text-base md:text-lg leading-relaxed max-w-2xl mx-auto"
+              style={{ color: "var(--color-gray-500)" }}
+            >
+              We bridge the gap between emerging talent and industry opportunity — providing structured guidance, real-world exposure, and direct placement support for fresh graduates looking to launch their careers.
+            </p>
+          </motion.div>
+
+          {/* Two-column layout: description + process */}
+          <div className="grid lg:grid-cols-2 gap-12 items-start mb-12">
+
+            {/* Left: Description */}
+            <motion.div {...fadeUp} className="space-y-5">
+              <p className="text-base md:text-lg leading-relaxed" style={{ color: "var(--color-gray-600)" }}>
+                Cloud Winit Solutions operates a structured <strong>Talent Consultancy Programme</strong> designed to identify, train, and place high-potential fresh graduates with our network of hiring partners. We invest in candidates from day one — providing technical mentorship, domain-specific training, and interview preparation at no upfront cost to the candidate.
+              </p>
+              <p className="text-base md:text-lg leading-relaxed" style={{ color: "var(--color-gray-600)" }}>
+                Upon successful placement, the hiring company disburses the candidate&apos;s full agreed salary to Cloud Winit Solutions. We then remit the candidate&apos;s net compensation directly, after retaining a pre-agreed consultancy service fee. This arrangement covers the cost of training, placement, and ongoing career support provided throughout the programme.
+              </p>
+              <p className="text-base md:text-lg leading-relaxed" style={{ color: "var(--color-gray-600)" }}>
+                All terms — including the consultancy fee structure, duration, and candidate obligations — are clearly documented and mutually signed before any engagement begins. Transparency and candidate welfare remain our highest priorities.
+              </p>
+            </motion.div>
+
+            {/* Right: 4-step process */}
+            <motion.div
+              {...fadeUp}
+              transition={{ duration: 0.6, delay: 0.15 }}
+              className="space-y-4"
+            >
+              {[
+                {
+                  step: "01",
+                  icon: GraduationCap,
+                  color: "#0e7490",
+                  bg: "#ecfeff",
+                  title: "Candidate Identification & Onboarding",
+                  desc: "We assess fresh graduates through aptitude and technical screenings, selecting candidates with strong foundational potential across engineering, development, and related disciplines.",
+                },
+                {
+                  step: "02",
+                  icon: Lightbulb,
+                  color: "var(--color-orange)",
+                  bg: "#fff7ed",
+                  title: "Structured Training & Mentorship",
+                  desc: "Candidates undergo a focused training programme covering industry-relevant technical skills, professional communication, and domain knowledge aligned with our hiring partners' requirements.",
+                },
+                {
+                  step: "03",
+                  icon: Handshake,
+                  color: "#16a34a",
+                  bg: "#f0fdf4",
+                  title: "Placement with Hiring Partners",
+                  desc: "We facilitate placement interviews with our vetted employer network and support candidates through offer negotiation, onboarding, and initial employment. The hiring company remits the agreed salary to Cloud Winit Solutions.",
+                },
+                {
+                  step: "04",
+                  icon: BadgeIndianRupee,
+                  color: "#7c3aed",
+                  bg: "#f5f3ff",
+                  title: "Salary Disbursement & Ongoing Support",
+                  desc: "The candidate receives their net compensation after deduction of the pre-agreed consultancy service fee. We continue to provide career guidance throughout the contractual period.",
+                },
+              ].map(({ step, icon: Icon, color, bg, title, desc }, i) => (
+                <motion.div
+                  key={step}
+                  {...fadeUp}
+                  transition={{ duration: 0.5, delay: 0.1 + i * 0.08 }}
+                  className="flex gap-4 rounded-xl border p-5 hover:shadow-md transition-shadow duration-300"
+                  style={{ borderColor: "var(--color-gray-200)", backgroundColor: "var(--color-gray-50)" }}
+                >
+                  <div
+                    className="flex-shrink-0 w-11 h-11 rounded-lg flex items-center justify-center"
+                    style={{ backgroundColor: bg }}
+                  >
+                    <Icon className="w-5 h-5" style={{ color }} />
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: "var(--color-gray-400)" }}>
+                      Step {step}
+                    </p>
+                    <h4
+                      className="text-base font-bold mb-1"
+                      style={{ color: "var(--color-navy)", fontFamily: "var(--font-heading)" }}
+                    >
+                      {title}
+                    </h4>
+                    <p className="text-sm leading-relaxed" style={{ color: "var(--color-gray-500)" }}>
+                      {desc}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+
+          {/* Formal Disclaimer / Key Terms Card */}
+          <motion.div
+            {...fadeUp}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="rounded-2xl border-l-4 p-8"
+            style={{
+              backgroundColor: "#f0f9ff",
+              borderLeftColor: "#0e7490",
+              borderColor: "var(--color-gray-200)",
+            }}
+          >
+            <div className="flex items-start gap-4">
+              <div
+                className="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center mt-0.5"
+                style={{ backgroundColor: "#cffafe" }}
+              >
+                <CheckCircle className="w-5 h-5" style={{ color: "#0e7490" }} />
+              </div>
+              <div>
+                <h4
+                  className="text-lg font-bold mb-3"
+                  style={{ color: "#0e7490", fontFamily: "var(--font-heading)" }}
+                >
+                  Programme Terms &amp; Transparency Commitment
+                </h4>
+                <ul className="space-y-2">
+                  {[
+                    "The consultancy fee is agreed upon and signed by both parties prior to the commencement of the programme — there are no hidden deductions.",
+                    "The fee is retained from the candidate's monthly salary for a defined contractual period, after which the candidate receives 100% of their compensation directly from the employer.",
+                    "Candidates are under no obligation to accept placement and may withdraw from the programme before any offer is accepted.",
+                    "The employing company is fully informed of this arrangement. All salary disbursements are processed transparently through Cloud Winit Solutions.",
+                    "This programme is not a loan scheme. There are no interest charges, penalties, or financial liabilities beyond the agreed consultancy fee.",
+                  ].map((point, i) => (
+                    <li key={i} className="flex items-start gap-2.5 text-sm leading-relaxed" style={{ color: "var(--color-gray-600)" }}>
+                      <span className="mt-0.5 flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center text-xs font-bold text-white" style={{ backgroundColor: "#0e7490" }}>
+                        ✓
+                      </span>
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </motion.div>
+
+        </div>
+      </section>
+
+      {/* 7. CTA Banner */}
       <CTABanner
         heading="Ready to Work With Us?"
         description="Let's discuss how we can help your business grow with custom software solutions."

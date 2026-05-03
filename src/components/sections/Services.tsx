@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Globe, Smartphone, Cloud, Bot, Wrench, Shield } from "lucide-react";
+import { Globe, Smartphone, Cloud, Bot, Wrench, Shield, GraduationCap } from "lucide-react";
 import Link from "next/link";
 
 const services = [
@@ -52,6 +52,14 @@ const services = [
     color: "#dc2626",
     bg: "#fef2f2",
     href: "/services/support-maintenance",
+  },
+  {
+    icon: GraduationCap,
+    title: "Talent Consultancy Programme",
+    body: "We identify high-potential fresh graduates, provide structured mentorship and hands-on technical training, and facilitate their placement with our hiring partners. Post-placement, a pre-agreed consultancy fee is deducted from the candidate's monthly compensation — transparently disclosed and mutually agreed upon before engagement begins.",
+    color: "#0e7490",
+    bg: "#ecfeff",
+    href: "/services/talent-consultancy",
   },
 ];
 
